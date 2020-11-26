@@ -31,7 +31,7 @@ public class ExchangeController {
         return monedaExchangeService.convertMoneda(monedaOrigen, monto, monedaDestino);
     }
 
-    @PutMapping("/{codMoneda}")
+    @PostMapping("/{codMoneda}")
     public Maybe<String> convertCurrency(@RequestParam() double newExchange,
                                          @PathVariable() String codMoneda) {
         return monedaExchangeService.updateMonedaExchange(codMoneda, newExchange);
